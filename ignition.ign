@@ -1,0 +1,97 @@
+{
+  "ignition": {
+    "config": {
+      "replace": {
+        "source": null,
+        "verification": {}
+      }
+    },
+    "security": {
+      "tls": {}
+    },
+    "timeouts": {},
+    "version": "3.0.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "name": "core",
+        "sshAuthorizedKeys": [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwafgSFP3Xpi5Shu6lYxFN77PoX49SRjROyZ6ZLIvrqCEcQuVGIZdGOIW83oyXX1NK4arRla7lBNtFAWRYfel9pEl/CCJ0pI4/m+jt1+ymaUa9zo3fTa20nIQW667QB2pUccbUQYKwL8Z3JctWLIXWqb/IMXFskgpKiSnH6wTm681i25kvWIrlyJUQ4yrbMaP3lgxQxBbY1sfo/pBuw4aOUHtJn4dvxZf1/vSYA6TphMzRSfFJBDw0k+CmcdqZV2U8F2m9UVc5EA+xK1XqWM0p510BZLuB/OVCGoh9uL25+OhgJ6LvyPwjKgWcJshg9GQb16llPx5lFcKoRwzU7byB home@home"
+        ]
+      },
+      {
+        "groups": [
+          "sudo",
+          "docker"
+        ],
+        "name": "aib-user",
+        "passwordHash": "$6$rounds=4096$4dtMABeWp$D9M4u6MYKX/QGYi7m5o0Gpa2UI5Nqb88nqYKf1wN4ZUTwJ6WOwgzzLLE26XPmpjdqXp9uFruMfP7Pp7Mq/QOP/",
+        "sshAuthorizedKeys": [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwafgSFP3Xpi5Shu6lYxFN77PoX49SRjROyZ6ZLIvrqCEcQuVGIZdGOIW83oyXX1NK4arRla7lBNtFAWRYfel9pEl/CCJ0pI4/m+jt1+ymaUa9zo3fTa20nIQW667QB2pUccbUQYKwL8Z3JctWLIXWqb/IMXFskgpKiSnH6wTm681i25kvWIrlyJUQ4yrbMaP3lgxQxBbY1sfo/pBuw4aOUHtJn4dvxZf1/vSYA6TphMzRSfFJBDw0k+CmcdqZV2U8F2m9UVc5EA+xK1XqWM0p510BZLuB/OVCGoh9uL25+OhgJ6LvyPwjKgWcJshg9GQb16llPx5lFcKoRwzU7byB home@home"
+        ]
+      }
+    ]
+  },
+  "storage": {
+    "files": [
+      {
+        "group": {
+          "id": 0
+        },
+        "overwrite": true,
+        "path": "/etc/hostname",
+        "user": {
+          "id": 0
+        },
+        "contents": {
+          "source": "data:,kube-node-1",
+          "verification": {}
+        },
+        "mode": 420
+      },
+      {
+        "group": {},
+        "overwrite": true,
+        "path": "/etc/NetworkManager/system-connections/eth2.nmconnection",
+        "user": {},
+        "contents": {
+          "source": "data:,%5Bconnection%5D%0Atype%3Dethernet%0Ainterface-name%3Deth2%0A%0A%5Bethernet%5D%0Amac-address%3D%200c%3Ac4%3A7a%3A7a%3A0f%3A36%0A%0A%5Bipv4%5D%0Amethod%3Dmanual%0Aaddresses%3D172.26.2.204%2F24%0Agateway%3D172.26.2.1%0Adns%3D8.8.8.8%0A",
+          "verification": {}
+        },
+        "mode": 384
+      },
+      {
+        "group": {},
+        "path": "/etc/NetworkManager/system-connections/team0.nmconnection",
+        "user": {},
+        "contents": {
+          "source": "data:,%5Bconnection%5D%0Aid%3Dteam0%0Atype%3Dteam%0Ainterface-name%3Dteam0%0A%0A%5Bipv4%5D%0Amethod%3Dmanual%0Aaddresses%3D172.26.102.204%2F24%0Agateway%3D172.26.102.1%0Adns%3D8.8.8.8%0A%0A%5Bteam%5D%0Aconfig%3D%7B%22runner%22%3A%20%7B%22name%22%3A%20%22lacp%22%2C%20%22active%22%3A%20true%2C%20%22fast_rate%22%3A%20true%2C%22tx_hash%22%3A%20%5B%22eth%22%2C%20%22ipv4%22%2C%20%22ipv6%22%5D%7D%2C%20%22link_watch%22%3A%20%7B%22name%22%3A%20%22ethtool%22%7D%7D%0A",
+          "verification": {}
+        },
+        "mode": 384
+      },
+      {
+        "group": {},
+        "path": "/etc/NetworkManager/system-connections/team0-slave-eth0.nmconnection",
+        "user": {},
+        "contents": {
+          "source": "data:,%5Bconnection%5D%0Aid%3Dteam0-slave-eth0%0Atype%3Dethernet%0Ainterface-name%3Deth0%0Amaster%3Dteam0%0Aslave-type%3Dteam%0A%0A%5Bethernet%5D%0Amac-address%3D%2090%3Ae2%3Aba%3A7a%3Ab3%3A74%0A%0A%5Bteam-port%5D%0Aconfig%3D%7B%22prio%22%3A%20100%7D%0A",
+          "verification": {}
+        },
+        "mode": 384
+      },
+      {
+        "group": {},
+        "path": "/etc/NetworkManager/system-connections/team0-slave-eth1.nmconnection",
+        "user": {},
+        "contents": {
+          "source": "data:,%5Bconnection%5D%0Aid%3Dteam0-slave-eth1%0Atype%3Dethernet%0Ainterface-name%3Deth1%0Amaster%3Dteam0%0Aslave-type%3Dteam%0A%0A%5Bethernet%5D%0Amac-address%3D%2090%3Ae2%3Aba%3A7a%3Ab3%3A75%0A%0A%5Bteam-port%5D%0Aconfig%3D%7B%22prio%22%3A%20100%7D%0A",
+          "verification": {}
+        },
+        "mode": 384
+      }
+    ]
+  },
+  "systemd": {}
+}
